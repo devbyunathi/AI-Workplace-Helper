@@ -209,7 +209,13 @@ function MessageBubble({ msg, isStreaming }: { msg: Msg; isStreaming: boolean })
             : "bg-muted text-foreground")
         }
       >
-        {msg.content || (isStreaming ? <span className="opacity-60">Thinking…</span> : null)}
+        {msg.content
+          ? isUser
+            ? msg.content
+            : renderAssistant(msg.content)
+          : isStreaming
+            ? <span className="opacity-60">Thinking…</span>
+            : null}
       </div>
       {isUser && (
         <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-muted">
@@ -218,4 +224,33 @@ function MessageBubble({ msg, isStreaming }: { msg: Msg; isStreaming: boolean })
       )}
     </div>
   );
+}
+
+// Render assistant text: strip leading bullet asterisks, turn **text** into bold.
+function renderAssistant(text: string) {
+  const lines = text.split("\n");
+  return (
+    <>
+      {lines.map((line, i) => {
+        const bulletMatch = line.match(/^(\s*)[*\-•]\s+(.*)$/);
+        const isBullet = !!bulletMatch;
+        const content = isBullet ? bulletMatch![2] : line;
+        return (
+          <div key={i} className={isBullet ? "flex gap-2" : undefined}>
+            {isBullet && <span aria-hidden>•</span>}
+            <span>{renderInline(content)}</span>
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
+function renderInline(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((p, i) => {
+    const m = p.match(/^\*\*([^*]+)\*\*$/);
+    if (m) return <strong key={i} className="font-semibold">{m[1]}</strong>;
+    return <span key={i}>{p}</span>;
+  });
 }
