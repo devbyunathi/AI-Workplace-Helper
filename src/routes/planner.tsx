@@ -97,7 +97,7 @@ Include buffer time and short breaks where sensible.`;
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base">
-              <CalendarClock className="h-4 w-4 text-primary" /> Plan your {range.toLowerCase()}
+              <CalendarClock className="h-4 w-4 text-primary" /> Plan your {range.toLowerCase()} schedule
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
