@@ -9,8 +9,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Dashboard — WorkFlow AI" },
       { name: "description", content: "AI tools for email, scheduling, and workplace help." },
-      { property: "og:title", content: "WorkFlow AI Dashboard" },
-      { property: "og:description", content: "Boost your workday with AI." },
+      { property: "og:title", content: "Dashboard — WorkFlow AI" },
+      { property: "og:description", content: "AI tools for email, scheduling, and workplace help." },
     ],
   }),
   component: Dashboard,

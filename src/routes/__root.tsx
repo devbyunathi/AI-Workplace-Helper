@@ -80,20 +80,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "WorkFlow AI — Productivity assistant for professionals" },
+      { title: "Dashboard — WorkFlow AI" },
       {
         name: "description",
         content:
-          "AI-powered email writing, task scheduling, and workplace assistance. No accounts, no data stored.",
+          "AI tools for email, scheduling, and workplace help.",
       },
       { name: "author", content: "WorkFlow AI" },
-      { property: "og:title", content: "WorkFlow AI — Productivity assistant" },
+      { property: "og:title", content: "Dashboard — WorkFlow AI" },
       {
         property: "og:description",
-        content: "AI email writing, scheduling, and workplace help. No sign-up.",
+        content: "AI tools for email, scheduling, and workplace help.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Dashboard — WorkFlow AI" },
+      { name: "twitter:description", content: "AI tools for email, scheduling, and workplace help." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d2b15ec-caf3-4478-841c-a273ac7d9fcd/id-preview-20fbce00--e700ae24-3626-4156-be33-ba9b7085e927.lovable.app-1784841392373.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d2b15ec-caf3-4478-841c-a273ac7d9fcd/id-preview-20fbce00--e700ae24-3626-4156-be33-ba9b7085e927.lovable.app-1784841392373.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
