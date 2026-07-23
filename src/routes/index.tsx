@@ -63,8 +63,11 @@ function Dashboard() {
                 Start chatting <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild>
               <Link to="/email">Write an email</Link>
+            </Button>
+            <Button asChild>
+              <Link to="/planner">Plan your schedule</Link>
             </Button>
           </div>
         </div>
